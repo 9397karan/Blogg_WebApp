@@ -8,5 +8,11 @@ const router=express.Router()
 router.post('/register',register)
 router.post('/login',login)
 router.get('/logout',logout)
+router.get("/check-auth", authenticate, (req, res) => {
 
+    return res.status(200).json({
+        success: true
+    })
+
+})
 export default router
